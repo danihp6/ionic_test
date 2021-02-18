@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item>
+      <ion-input placeholder="Search..." class="ion-padding" (change)="onSearch($event.target.value)"></ion-input>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item *ngIf="films != null && films.length == 0">
+    <ion-label>No films</ion-label>
+  </ion-item>
+  <ion-list *ngFor="let film of films">
+    <ion-item [routerLink]="['/films/',film.id]">
+      <ion-avatar>
+        <ion-img [src]="film.image" (ionError)="this.src = '../../assets/img/film.jpg'"></ion-img>
+      </ion-avatar>
+      <ion-row class="width-separator"></ion-row>
+      <ion-label>{{film.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

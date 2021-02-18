@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/films"></ion-back-button>
+    </ion-buttons>
+    <ion-item>
+      <ion-avatar>
+        <ion-img [src]="film.image" *ngIf="film != null"></ion-img>
+      </ion-avatar>
+      <ion-title *ngIf="film != null">{{film.title}}</ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-padding" *ngIf="film != null">
+    <ion-img [src]="film.image"></ion-img>
+    <ion-col>
+      <ion-row>
+        <ion-icon name="calendar"></ion-icon>
+        <ion-row class="width-separator"></ion-row>
+        <ion-text>{{film.year}}</ion-text>
+      </ion-row>
+      <ion-row class="height-separator"></ion-row>
+      <ion-row>
+        <ion-icon name="person"></ion-icon>
+        <ion-row class="width-separator"></ion-row>
+        <ion-text>{{film.director}}</ion-text>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>
