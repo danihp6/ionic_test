@@ -15,13 +15,6 @@ export class FilmsPage implements OnDestroy {
 
   constructor(private filmsService: FilmsService) { }
 
-  // ngOnInit(){
-  //   this.filmsSub = this.filmsService.getFilms('Avatar').subscribe(films => {
-  //     console.log(films);
-  //     this.films = films;
-  //   });
-  // }
-
   onSearch(search: String) {
     this.filmsSub = this.filmsService.getFilms(search).subscribe(films =>
       this.films = films

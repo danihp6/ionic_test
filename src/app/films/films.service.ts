@@ -28,6 +28,6 @@ export class FilmsService {
       .pipe(
         map(film => new Film(film)
         )
-      )
+      );
   }
 }
